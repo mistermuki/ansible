@@ -1,0 +1,8 @@
+- name: Install Rustup
+  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  tags: &tags_for_rust_tasks ['install', 'core', 'rust']
+
+- name: Install Toolchain
+  shell: rustup toolchain install stable
+  tags: *tags_for_rust_tasks
+

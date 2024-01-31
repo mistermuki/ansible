@@ -1,0 +1,8 @@
+- name: Install Kiboigo ZSH
+  copy:
+    src: "./kiboigo/kiboigo.zsh"
+    dest: "$HOME/.kiboigo/kiboigo.zsh"
+    mode: 0600
+  tags:
+    - install
+    - kiboigo

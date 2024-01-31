@@ -1,7 +1,17 @@
+- name: System Packages [1]
+  become: true
+  apt:
+    name: ["curl", "build-essential", "make"]
+  tags:
+    - install
+    - core
+    - zsh
+    - neovim
+    - rust
+
 - name: Install Kitty 
   become: true
   apt: name=kitty
   tags:
     - install
-    - dotfiles
     - core
