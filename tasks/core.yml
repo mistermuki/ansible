@@ -2,4 +2,6 @@
   become: true
   apt: name=kitty
   tags:
+    - install
+    - dotfiles
     - core

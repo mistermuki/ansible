@@ -3,12 +3,12 @@
     source_key: "./ssh/id_rsa"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
   pre_tasks:
-  - name: Update Apt
+  - name: Update and upgrade apt packages
     become: true
     apt:
-      force_apt_get: true
-      update_cache: true
-      state: present
+      upgrade: yes
+      update_cache: yes
+      cache_valid_time: 86400 # One Day
     tags:
       - install
       - core
