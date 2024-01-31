@@ -14,9 +14,9 @@
       - core
   tasks:
     - include: tasks/core.yml
-    - include: tasks/neovim.yml
     - include: tasks/ssh.yml
+    - include: tasks/neovim.yml
     - include: tasks/zsh.yml
-    - include: tasks/kiboigo.yml
     - include: tasks/dotfiles.yml
+    - include: tasks/kiboigo.yml
     - include: tasks/rust.yml
