@@ -1,6 +1,6 @@
 - name: Ensure .kiboigo directory exists.
   file:
-    dest: "{{ $HOME/.kiboigo }}"
+    dest: "{{ lookup('env', 'HOME') }}/.kiboigo"
     mode: 0700
     state: directory
   tags: &tags_for_kiboigo_tasks [ 'install', 'kiboigo' ]
@@ -8,6 +8,6 @@
 - name: Install Kiboigo ZSH
   copy:
     src: "./kiboigo/kiboigo.zsh"
-    dest: "$HOME/.kiboigo/kiboigo.zsh"
+    dest: "{{ lookup('env', 'HOME') }}/.kiboigo/kiboigo.zsh"
     mode: 0600
   tags: *tags_for_kiboigo_tasks
