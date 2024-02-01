@@ -9,7 +9,7 @@
   tags: ['kitty', 'desktop']
 
 - name: Download JetBrainsMono Nerd Font
-  shell: curl -l https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip -o {{ lookup('env', 'HOME') }}/JetBrainsMono.zip
+  shell: curl -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip -o {{ lookup('env', 'HOME') }}/JetBrainsMono.zip
   tags: ['fonts', 'desktop']
 
 - name: Install JetBrainsMono Nerd Font
