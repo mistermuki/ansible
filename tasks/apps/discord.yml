@@ -1,4 +1,3 @@
 - name: Install Discord
-  become: true
   shell: flatpak install --user -y --noninteractive flathub com.discordapp.Discord
   tags: ['discord', 'desktop']
