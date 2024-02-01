@@ -2,7 +2,7 @@
   become: true
   apt:
     name: ["openbox", "menu", "xorg"]
-  tags: &tags_for_openbox_tasks ['desktop', 'openbox']
+  tags: &tags_for_openbox_tasks ['openbox', 'desktop'] 
 
 - name: Install Polybar
   become: true

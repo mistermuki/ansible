@@ -3,21 +3,21 @@
     dest: "{{ dest_key | dirname }}"
     mode: 0700
     state: directory
-  tags: always 
+  tags: &tags_for_ssh_tasks ['ssh', 'core', 'desktop', 'neovim']
 
 - name: Install ssh key
   copy:
     src: "{{ source_key }}"
     dest: "{{ dest_key }}"
     mode: 0600
-  tags: always 
+  tags: *tags_for_ssh_tasks 
 
 - name: Install ssh key public
   copy:
     src: "{{ source_key }}.pub"
     dest: "{{ dest_key }}.pub"
     mode: 0644
-  tags: always
+  tags: *tags_for_ssh_tasks
   
 #- name: Set authorized key took from file
 #  authorized_key:

@@ -10,7 +10,6 @@
       update_cache: yes
       cache_valid_time: 86400 # One Day
     tags:
-      - install
       - core
       - desktop
   tasks:
@@ -22,4 +21,5 @@
     - include: tasks/dev/neovim.yml
     - include: tasks/dev/rust.yml
     - include: tasks/desktop/openbox.yml
+    - include: tasks/apps/firefox.yml
     - include: tasks/apps/kitty.yml
