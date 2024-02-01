@@ -20,6 +20,7 @@
     - include: tasks/kiboigo.yml
     - include: tasks/dev/neovim.yml
     - include: tasks/dev/rust.yml
+    - include: tasks/desktop/kernel.yml
     - include: tasks/desktop/openbox.yml
     - include: tasks/desktop/fonts.yml
     - include: tasks/apps/firefox.yml

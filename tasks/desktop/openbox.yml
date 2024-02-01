@@ -28,3 +28,9 @@
   become: true
   apt: name=rofi
   tags: *tags_for_openbox_tasks 
+
+- name: Install Pulse-Audio & Tools
+  become: true
+  apt:
+    name: ["pulseaudio", "pavucontrol"]
+  tags: *tags_for_openbox_tasks

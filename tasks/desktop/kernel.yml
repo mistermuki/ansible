@@ -1,0 +1,25 @@
+- name: Add Bookworm Backports
+  become: true
+  ansible.builtin.apt_repository:
+    repo: deb http://deb.debian.org/debian/ bookworm-backports main
+    state: present
+  tags: &tags_for_kernel_tasks ['kernel', 'desktop'] 
+
+- name: Update Bookworm Apt
+  become: true
+  apt:
+    force_apt_get: true
+    update_cache: yes
+    state: present
+  tags: *tags_for_kernel_tasks
+
+- name: Install Backport Kernel
+  become: true
+  apt:
+    name: ['linux-image-amd64/bookworm-backports'] 
+  tags: *tags_for_kernel_tasks
+
+- name: Clean old Kernel 
+  become: true
+  shell: apt autoremove
+  tags: *tags_for_kernel_tasks
