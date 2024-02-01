@@ -24,6 +24,7 @@
     - include: tasks/desktop/openbox.yml
     - include: tasks/desktop/fonts.yml
     - include: tasks/desktop/flatpak.yml
-    - include: tasks/apps/spotify.yml
+    - include: tasks/apps/discord.yml
     - include: tasks/apps/firefox.yml
     - include: tasks/apps/kitty.yml
+    - include: tasks/apps/spotify.yml
