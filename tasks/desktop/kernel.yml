@@ -16,10 +16,14 @@
 - name: Install Backport Kernel
   become: true
   apt:
-    name: ['linux-image-amd64/bookworm-backports'] 
+    name: 'linux-image-amd64'
+    state: latest
+    default_release: bookworm-backports
   tags: *tags_for_kernel_tasks
 
 - name: Clean old Kernel 
   become: true
-  shell: apt autoremove
+  apt:
+    autoremove: yes
+    purge: yes
   tags: *tags_for_kernel_tasks
