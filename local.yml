@@ -22,6 +22,7 @@
     - include: tasks/dev/rust.yml
     - include: tasks/desktop/kernel.yml
     - include: tasks/desktop/openbox.yml
+    - include: tasks/desktop/ly.yml
     - include: tasks/desktop/fonts.yml
     - include: tasks/desktop/flatpak.yml
     - include: tasks/apps/firefox.yml

@@ -9,7 +9,6 @@
   register: nvim_file
   tags: *tags_for_nv_tasks
 
-
 - name: Clone Neovim Repo
   ansible.builtin.git:
     repo: 'git@github.com:neovim/neovim.git'

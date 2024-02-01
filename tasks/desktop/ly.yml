@@ -1,0 +1,33 @@
+- name: Check that Ly exists
+  stat:
+    path: /etc/ly/config.ini
+  register: ly_file
+  tags: &tags_for_ly_tasks ['ly', 'desktop'] 
+
+- name: Install Ly Dependencies
+  apt:
+    name: ["build-essential", "libpam0g-dev", "libxcb-xkb-dev"]
+  when: ly_file.stat.exists == false
+  tags: *tags_for_ly_tasks
+
+- name: Clone Ly Repo 
+  ansible.builtin.git:
+    repo: 'git@github.com:fairyglade/ly.git'
+    dest: "{{ lookup('env', 'HOME') }}/ly"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: v0.6.0
+  when: ly_file.stat.exists == false
+  tags: *tags_for_ly_tasks
+
+- name: Build Ly 
+  shell: cd {{ lookup('env', 'HOME') }}/ly && make
+  when: ly_file.stat.exists == false
+  tags: *tags_for_ly_tasks
+
+- name: Install Ly 
+  become: true
+  shell: cd {{ lookup('env', 'HOME') }}/ly && make install installsystemd && systemctl enable ly.service && rm -rf {{ lookup('env', 'HOME') }}/ly
+  when: ly_file.stat.exists == false
+  tags: *tags_for_ly_tasks

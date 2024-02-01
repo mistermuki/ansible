@@ -9,11 +9,6 @@
   apt: name=polybar
   tags: *tags_for_openbox_tasks 
 
-- name: Install lightdm
-  become: true
-  apt: name=lightdm
-  tags: *tags_for_openbox_tasks 
-
 - name: Install feh
   become: true
   apt: name=feh
