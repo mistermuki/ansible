@@ -12,11 +12,14 @@
     tags:
       - install
       - core
+      - desktop
   tasks:
     - include: tasks/core.yml
     - include: tasks/ssh.yml
     - include: tasks/neovim.yml
     - include: tasks/zsh.yml
     - include: tasks/dotfiles.yml
+    - include: tasks/kitty.yml
     - include: tasks/kiboigo.yml
+    - include: tasks/openbox.yml
     - include: tasks/rust.yml

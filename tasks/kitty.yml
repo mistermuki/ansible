@@ -1,0 +1,12 @@
+- name: Install Kitty 
+  become: true
+  apt: name=kitty
+  tags:
+    - desktop
+    - kitty
+
+- name: Set Kitty as default Terminal
+  become: true
+  shell: update-alternatives --set x-terminal-emulator /usr/bin/kitty
+  tags:
+    - desktop

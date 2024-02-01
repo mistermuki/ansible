@@ -1,7 +1,7 @@
 - name: Installing stow
   apt: name=stow
   become: true
-  tags: &tags_for_df_tasks [ 'install', 'dotfiles', 'stow' ]
+  tags: &tags_for_df_tasks [ 'install', 'dotfiles', 'stow', 'desktop' ]
 
 - name: Cloning .dotfiles
   ansible.builtin.git:

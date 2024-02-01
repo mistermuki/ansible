@@ -1,0 +1,9 @@
+- name: System Packages [Desktop]
+  become: true
+  apt:
+    name: ["openbox", "menu", "xorg", "polybar", "lightdm", "feh"]
+  tags: &tags_for_openbox_tasks ['desktop']
+
+- name: Set Wallpaper (Lambda)
+  shell: feh --bg-tile {{ lookup('env', 'HOME') }}/.wallpaper/lambda.jpg 
+  tags: *tags_for_openbox_tasks
