@@ -4,6 +4,11 @@
     name: ["openbox", "menu", "xorg"]
   tags: &tags_for_openbox_tasks ['openbox', 'desktop'] 
 
+- name: Install Xscreensaver
+  become: true
+  apt: name=xscreensaver
+  tags: *tags_for_openbox_tasks 
+
 - name: Install Polybar
   become: true
   apt: name=polybar
