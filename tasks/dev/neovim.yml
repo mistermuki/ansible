@@ -13,5 +13,5 @@
 
 - name: Install Neovim
   become: true
-  shell: cd {{ lookup('env', 'HOME') }}/neovim && make install
+  shell: cd {{ lookup('env', 'HOME') }}/neovim && make install && rm -rf {{ lookup('env', 'HOME') }}/neovim
   tags: *tags_for_nv_tasks
