@@ -3,3 +3,8 @@
   apt:
     name: ["curl", "build-essential", "make", "cmake", "zip", "unzip", "autoconf", "automake", "g++", "pkg-config", "doxygen", "ninja-build", "gettext", "libtool", "libtool-bin"]
   tags: always
+
+- name: Network Manager
+  become: true
+  apt: name=network-manager
+  tags: always
