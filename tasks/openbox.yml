@@ -6,4 +6,5 @@
 
 - name: Set Wallpaper (Lambda)
   shell: feh --bg-tile {{ lookup('env', 'HOME') }}/.wallpaper/lambda.jpg 
-  tags: *tags_for_openbox_tasks
+  tags:
+    - desktop-after
