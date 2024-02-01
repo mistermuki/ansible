@@ -16,6 +16,7 @@
 
 - name: Build Neovim
   shell: cd $HOME/neovim && make
+  when: nvim_file.stat.exists == false
   tags: *tags_for_nv_tasks
 
 - name: Install Neovim
