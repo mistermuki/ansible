@@ -10,3 +10,15 @@
   shell: update-alternatives --set x-terminal-emulator /usr/bin/kitty
   tags:
     - desktop
+
+- name: Download JetBrainsMono Nerd Font
+  shell: curl -l https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip -o {{ lookup('env', 'HOME') }}/JetBrainsMono.zip
+  tags:
+    - desktop
+    - fonts
+
+- name: Install JetBrainsMono Nerd Font
+  shell: unzip {{ lookup('env', 'HOME') }}/JetBrainsMono.zip -d {{ lookup('env', 'HOME') }}/.fonts/ && fc-cache && rm {{ lookup('env, 'HOME) }}/JetBrainsMono.zip
+  tags:
+    - desktop 
+    - fonts
