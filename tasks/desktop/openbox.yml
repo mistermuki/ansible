@@ -19,6 +19,11 @@
   apt: name=feh
   tags: *tags_for_openbox_tasks 
 
+- name: Install arandr
+  become: true
+  apt: name=arandr
+  tags: *tags_for_openbox_tasks 
+
 - name: Install rofi
   become: true
   apt: name=rofi
