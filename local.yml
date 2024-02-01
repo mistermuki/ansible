@@ -21,5 +21,6 @@
     - include: tasks/dev/neovim.yml
     - include: tasks/dev/rust.yml
     - include: tasks/desktop/openbox.yml
+    - include: tasks/desktop/fonts.yml
     - include: tasks/apps/firefox.yml
     - include: tasks/apps/kitty.yml

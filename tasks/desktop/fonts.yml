@@ -1,0 +1,15 @@
+- name: Download JetBrainsMono Nerd Font
+  shell: curl -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip -o {{ lookup('env', 'HOME') }}/JetBrainsMono.zip
+  tags: ['fonts', 'desktop', 'kitty', 'openbox']
+
+- name: Install JetBrainsMono Nerd Font
+  shell: unzip {{ lookup('env', 'HOME') }}/JetBrainsMono.zip -d {{ lookup('env', 'HOME') }}/.fonts/ && fc-cache && rm {{ lookup('env', 'HOME') }}/JetBrainsMono.zip
+  tags: ['fonts', 'desktop', 'kitty', 'openbox']
+
+- name: Download NerdFontsSymbolsOnly
+  shell: curl -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/NerdFontsSymbolsOnly.zip -o {{ lookup('env', 'HOME') }}/NerdFontsSymbolOnly.zip
+  tags: ['fonts', 'desktop', 'openbox']
+
+- name: Install NerdFontsSymbolsOnly Nerd Font
+  shell: unzip {{ lookup('env', 'HOME') }}/NerdFontsSymbolsOnly.zip -d {{ lookup('env', 'HOME') }}/.fonts/ && fc-cache && rm {{ lookup('env', 'HOME') }}/NerdFontsSymbolOnly.zip
+  tags: ['fonts', 'desktop', 'openbox']
