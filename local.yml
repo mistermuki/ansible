@@ -14,12 +14,12 @@
       - core
       - desktop
   tasks:
-    - include: tasks/core.yml
-    - include: tasks/ssh.yml
-    - include: tasks/neovim.yml
-    - include: tasks/zsh.yml
-    - include: tasks/dotfiles.yml
-    - include: tasks/kitty.yml
+    - include: tasks/core/core.yml
+    - include: tasks/core/ssh.yml
+    - include: tasks/core/zsh.yml
+    - include: tasks/core/dotfiles.yml
     - include: tasks/kiboigo.yml
-    - include: tasks/openbox.yml
-    - include: tasks/rust.yml
+    - include: tasks/dev/neovim.yml
+    - include: tasks/dev/rust.yml
+    - include: tasks/desktop/openbox.yml
+    - include: tasks/apps/kitty.yml

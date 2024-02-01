@@ -1,0 +1,20 @@
+- name: Install Openbox
+  become: true
+  apt:
+    name: ["openbox", "menu", "xorg"]
+  tags: &tags_for_openbox_tasks ['desktop', 'openbox']
+
+- name: Install Polybar
+  become: true
+  apt: name=polybar
+  tags: &tags_for_openbox_tasks ['desktop', 'polybar']
+
+- name: Install lightdm
+  become: true
+  apt: name=lightdm
+  tags: &tags_for_openbox_tasks ['desktop', 'lightdm']
+
+- name: Install feh
+  become: true
+  apt: name=feh
+  tags: &tags_for_openbox_tasks ['desktop', 'feh']

@@ -1,7 +1,7 @@
 - name: Installing stow
   apt: name=stow
   become: true
-  tags: &tags_for_df_tasks [ 'install', 'dotfiles', 'stow', 'desktop' ]
+  tags: always 
 
 - name: Cloning .dotfiles
   ansible.builtin.git:
@@ -10,19 +10,19 @@
     update: yes
     accept_hostkey: yes
     version: main
-  tags: *tags_for_df_tasks
+  tags: always 
 
 - name: Check that .zshrc exists
   stat:
     path: /home/{{ current_user.stdout}}/.zshrc
   register: zshrc_file
-  tags: *tags_for_df_tasks
+  tags: always 
 
 - name: Remove .zshrc
   shell: rm ~/.zshrc
   when: zshrc_file.stat.exists == true
-  tags: *tags_for_df_tasks
+  tags: always 
 
 - name: Stow dotfiles
   shell: cd $HOME/.dotfiles && ./install.sh
-  tags: *tags_for_df_tasks
+  tags: always

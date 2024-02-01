@@ -5,7 +5,7 @@
     update: yes
     accept_hostkey: yes
     version: release-0.9
-  tags: &tags_for_nv_tasks ['install', 'neovim', 'desktop']
+  tags: &tags_for_nv_tasks ['neovim', 'dev', 'desktop']
 
 - name: Build Neovim
   shell: cd $HOME/neovim && make

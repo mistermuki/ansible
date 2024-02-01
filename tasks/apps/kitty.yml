@@ -2,13 +2,14 @@
   become: true
   apt: name=kitty
   tags:
-    - desktop
     - kitty
+    - desktop
 
 - name: Set Kitty as default Terminal
   become: true
   shell: update-alternatives --set x-terminal-emulator /usr/bin/kitty
   tags:
+    - kitty
     - desktop
 
 - name: Download JetBrainsMono Nerd Font

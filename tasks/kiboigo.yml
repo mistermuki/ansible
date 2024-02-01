@@ -3,7 +3,7 @@
     dest: "{{ lookup('env', 'HOME') }}/.kiboigo"
     mode: 0700
     state: directory
-  tags: &tags_for_kiboigo_tasks [ 'install', 'kiboigo', 'desktop' ]
+  tags: &tags_for_kiboigo_tasks ['kiboigo', 'desktop', 'dev']
 
 - name: Install Kiboigo ZSH
   copy:

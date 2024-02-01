@@ -1,6 +1,0 @@
-- name: System Packages [Desktop]
-  become: true
-  apt:
-    name: ["openbox", "menu", "xorg", "polybar", "lightdm", "feh"]
-  tags: &tags_for_openbox_tasks ['desktop']
-

@@ -1,0 +1,13 @@
+- name: Install Firefox 
+  become: true
+  apt: name=firefox-esr
+  tags:
+    - firefox
+    - desktop
+
+- name: Set Firefox as default Browser 
+  become: true
+  shell: update-alternatives --set x-web-browser /usr/bin/firefox
+  tags:
+    - firefox
+    - desktop

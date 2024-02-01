@@ -2,9 +2,4 @@
   become: true
   apt:
     name: ["curl", "build-essential", "make", "cmake", "zip", "unzip", "autoconf", "automake", "g++", "pkg-config", "doxygen", "ninja-build", "gettext", "libtool", "libtool-bin"]
-  tags:
-    - install
-    - core
-    - neovim
-    - zsh
-    - desktop
+  tags: always
