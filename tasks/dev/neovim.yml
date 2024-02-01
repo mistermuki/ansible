@@ -1,8 +1,13 @@
+- name: Install Ripgrep
+  apt: name=ripgrep
+  tags: &tags_for_nv_tasks ['neovim', 'dev', 'desktop']
+
 - name: Check that nvim executable exists
   stat:
     path: /usr/local/bin/nvim
   register: nvim_file
-  tags: &tags_for_nv_tasks ['neovim', 'dev', 'desktop']
+  tags: *tags_for_nv_tasks
+
 
 - name: Clone Neovim Repo
   ansible.builtin.git:
