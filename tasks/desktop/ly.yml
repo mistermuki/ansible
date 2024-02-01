@@ -5,6 +5,7 @@
   tags: &tags_for_ly_tasks ['ly', 'desktop'] 
 
 - name: Install Ly Dependencies
+  become: true
   apt:
     name: ["build-essential", "libpam0g-dev", "libxcb-xkb-dev"]
   when: ly_file.stat.exists == false
