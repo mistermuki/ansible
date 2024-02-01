@@ -1,7 +1,7 @@
 - name: Register Shell User
   shell: whoami
   register: current_user
-  tags: &tags_for_zsh_tasks [ 'install', 'dotfiles', 'zsh' ]
+  tags: &tags_for_zsh_tasks [ 'install', 'dotfiles', 'zsh', 'desktop' ]
 
 - name: Install ZSH
   apt: name=zsh
