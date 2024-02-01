@@ -1,0 +1,8 @@
+- name: Install Flatpak 
+  become: true
+  apt: name=flatpak
+  tags: &tags_for_flatpak_tasks ['flatpak', 'desktop'] 
+
+- name: Add Flathub to Flatpak
+  shell: flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+  tags: *tags_for_flatpak_tasks

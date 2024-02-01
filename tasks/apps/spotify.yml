@@ -1,0 +1,4 @@
+- name: Install Spotify
+  become: true
+  shell: flatpak install -y --noninteractive flathub com.spotify.Client
+  tags: ['spotify', 'desktop']
