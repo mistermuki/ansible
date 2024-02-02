@@ -1,0 +1,11 @@
+- name: Install Virt Manager
+  become: true
+  apt:
+    name: ['virt-manager']
+  tags: &tags_for_virt_tasks ['virt', 'dev']
+
+- name: Install QEMU 
+  become: true
+  apt:
+    name: ['qemu-system']
+  tags: *tags_for_virt_tasks

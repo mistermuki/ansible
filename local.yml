@@ -19,7 +19,6 @@
     - include: tasks/core/dotfiles.yml
     - include: tasks/kiboigo.yml
     - include: tasks/dev/neovim.yml
-    - include: tasks/dev/rust.yml
     - include: tasks/desktop/kernel.yml
     - include: tasks/desktop/openbox.yml
     - include: tasks/desktop/ly.yml
@@ -30,3 +29,5 @@
     - include: tasks/apps/discord.yml
     - include: tasks/apps/spotify.yml
     - include: tasks/apps/slack.yml
+    - include: tasks/dev/rust.yml
+    - include: tasks/dev/virt.yml
