@@ -27,5 +27,5 @@
 - name: Install Pulse-Audio & Tools
   become: true
   apt:
-    name: ["pulseaudio", "pavucontrol"]
+    name: ["pulseaudio", "pavucontrol", "playerctl"]
   tags: *tags_for_openbox_tasks
