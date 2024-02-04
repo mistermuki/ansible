@@ -24,6 +24,16 @@
   apt: name=rofi
   tags: *tags_for_openbox_tasks 
 
+- name: Install ksnip
+  become: true
+  apt: name=ksnip
+  tags: *tags_for_openbox_tasks 
+
+- name: Install thunar
+  become: true
+  apt: name=thunar
+  tags: *tags_for_openbox_tasks 
+
 - name: Install Pulse-Audio & Tools
   become: true
   apt:
