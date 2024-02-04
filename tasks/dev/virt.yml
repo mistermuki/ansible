@@ -1,11 +1,21 @@
+- name: Register Current User for QEMU/libvirt
+  shell: whoami
+  register: current_user
+  tags: &tags_for_virt_tasks ['virt', 'dev']
+
 - name: Install Virt Manager
   become: true
   apt:
     name: ['virt-manager']
-  tags: &tags_for_virt_tasks ['virt', 'dev']
+  tags: *tags_for_virt_tasks
 
 - name: Install QEMU 
   become: true
   apt:
     name: ['qemu-system']
+  tags: *tags_for_virt_tasks
+
+- name: Add User to libvirt group
+  become: true
+  shell: usermod -aG libvirt {{ current_user.stdout }}
   tags: *tags_for_virt_tasks

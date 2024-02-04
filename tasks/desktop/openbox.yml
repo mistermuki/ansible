@@ -1,8 +1,13 @@
+- name: Register Current User for Openbox
+  shell: whoami
+  register: current_user
+  tags: &tags_for_openbox_tasks ['openbox', 'desktop'] 
+
 - name: Install Openbox
   become: true
   apt:
-    name: ["openbox", "menu", "xorg", "xclip"]
-  tags: &tags_for_openbox_tasks ['openbox', 'desktop'] 
+    name: ["openbox", "menu", "xorg", "xclip", "light"]
+  tags: *tags_for_openbox_tasks 
 
 - name: Install Polybar
   become: true
@@ -39,3 +44,9 @@
   apt:
     name: ["pulseaudio", "pavucontrol", "playerctl"]
   tags: *tags_for_openbox_tasks
+
+- name: Add User to video group
+  become: true
+  shell: usermod -aG video {{ current_user.stdout }}
+  tags: *tags_for_openbox_tasks
+
