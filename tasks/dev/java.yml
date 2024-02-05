@@ -1,0 +1,11 @@
+- name: Install OpenJDK 17
+  become: true
+  apt:
+    name: ['openjdk-17-jdk']
+  tags: &tags_for_java_tasks ['java', 'dev']
+
+- name: Install Maven 
+  become: true
+  apt:
+    name: ['maven']
+  tags: *tags_for_java_tasks

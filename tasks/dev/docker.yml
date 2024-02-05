@@ -1,0 +1,5 @@
+- name: Install Docker
+  become: true
+  apt:
+    name: ['docker', 'docker-compose']
+  tags: &tags_for_docker_tasks ['docker', 'k3s', 'dev']
