@@ -32,5 +32,6 @@
     - include: tasks/dev/rust.yml
     - include: tasks/dev/virt.yml
     - include: tasks/dev/java.yml
+    - include: tasks/dev/node.yml
     - include: tasks/dev/docker.yml
     - include: tasks/dev/k3s.yml
