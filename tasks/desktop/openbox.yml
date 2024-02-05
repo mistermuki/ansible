@@ -9,6 +9,11 @@
     name: ["openbox", "menu", "xorg", "xclip", "light"]
   tags: *tags_for_openbox_tasks 
 
+- name: Install Power Manager
+  become: true
+  apt: name=xfce4-power-manager
+  tags: *tags_for_openbox_tasks
+
 - name: Install Polybar
   become: true
   apt: name=polybar
