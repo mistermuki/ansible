@@ -29,6 +29,8 @@
     - include: tasks/apps/discord.yml
     - include: tasks/apps/spotify.yml
     - include: tasks/apps/slack.yml
+    - include: tasks/apps/freecad.yml
+    - include: tasks/apps/kicad.yml
     - include: tasks/dev/rust.yml
     - include: tasks/dev/virt.yml
     - include: tasks/dev/java.yml

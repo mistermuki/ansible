@@ -1,0 +1,3 @@
+- name: Install FreeCAD
+  shell: flatpak install --user -y --noninteractive flathub org.freecadweb.FreeCAD
+  tags: ['freecad', 'cad']

@@ -1,0 +1,3 @@
+- name: Install KiCAD
+  shell: flatpak install --user -y --noninteractive flathub org.kicad.KiCad
+  tags: ['kicad', 'cad']
