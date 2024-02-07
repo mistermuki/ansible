@@ -1,5 +1,15 @@
+- name: Register Current User for Docker
+  shell: whoami
+  register: current_user
+  tags: &tags_for_docker_tasks ['docker', 'k3s', 'dev']
+
 - name: Install Docker
   become: true
   apt:
     name: ['docker', 'docker-compose']
-  tags: &tags_for_docker_tasks ['docker', 'k3s', 'dev']
+  tags: *tags_for_docker_tasks
+
+- name: Add User to Docker group
+  become: true
+  shell: usermod -aG docker {{ current_user.stdout }}
+  tags: *tags_for_docker_tasks
