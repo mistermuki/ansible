@@ -9,6 +9,11 @@
     name: ["openbox", "menu", "xorg", "xclip", "light"]
   tags: *tags_for_openbox_tasks 
 
+- name: Install Papirus Icon Theme
+  become: true
+  apt: name=papirus-icon-theme
+  tags: *tags_for_openbox_tasks
+
 - name: Install Power Manager
   become: true
   apt: name=xfce4-power-manager
