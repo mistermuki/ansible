@@ -1,0 +1,4 @@
+- name: Install Krita
+  shell: flatpak install --user -y --noninteractive flathub org.kde.krita
+  tags: ['krita', 'desktop']
+
