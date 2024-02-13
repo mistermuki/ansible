@@ -29,6 +29,7 @@
     - include: tasks/apps/kitty.yml
     - include: tasks/apps/discord.yml
     - include: tasks/apps/spotify.yml
+    - include: tasks/apps/zoom.yml
     - include: tasks/apps/slack.yml
     - include: tasks/apps/freecad.yml
     - include: tasks/apps/kicad.yml

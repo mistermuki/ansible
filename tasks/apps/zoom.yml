@@ -1,0 +1,3 @@
+- name: Install Zoom
+  shell: flatpak install --user -y --noninteractive flathub us.zoom.Zoom
+  tags: ['zoom']
