@@ -6,3 +6,7 @@
 - name: Add Flathub to Flatpak
   shell: flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo
   tags: *tags_for_flatpak_tasks
+
+- name: Install Flatseal
+  shell: flatpak install --user -y --noninteractive flathub com.github.tchx84.Flatseal
+  tags: *tags_for_flatpak_tasks
