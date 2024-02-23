@@ -9,6 +9,10 @@
     name: ["openbox", "menu", "xorg", "xclip", "light"]
   tags: *tags_for_openbox_tasks 
 
+- name: Create XDG User Dirs
+  shell: xdg-user-dirs-update
+  tags: *tags_for_openbox_tasks
+
 - name: Install Papirus Icon Theme
   become: true
   apt: name=papirus-icon-theme
@@ -48,6 +52,10 @@
   become: true
   apt: name=thunar
   tags: *tags_for_openbox_tasks 
+
+- name: Set Thunar as default XDG inode/directory
+  shell: xdg-mime default org.xfce.Thunar.desktop inode/directory
+  tags: *tags_for_openbox_tasks
 
 - name: Install Pulse-Audio & Tools
   become: true
