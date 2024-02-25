@@ -1,0 +1,17 @@
+- name: Download dotnet repository .deb
+  shell: wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O {{ lookup('env', 'HOME') }}/packages-microsoft-prod.deb
+  tags: &tags_for_dotnet_tasks ['dotnet', 'dev']
+
+- name: Add dotnet repository
+  become: true
+  shell: dpkg -i {{ lookup('env', 'HOME') }}/packages-microsoft-prod.deb && rm {{ lookup('env', 'HOME') }}/packages-microsoft-prod.deb
+  tags: *tags_for_dotnet_tasks
+
+- name: Install dotnet
+  become: true
+  apt:
+    force_apt_get: true
+    update_cache: yes
+    state: present
+    name: ['dotnet-sdk-8.0']
+  tags: *tags_for_dotnet_tasks
