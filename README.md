@@ -1,1 +1,3 @@
-this is meant to fully scaffold and set up my debian config from a minimal bookworm install (no de)
+Set of Ansible scripts meant to scaffold Debian 12 how I like it.
+
+Assumes that you are starting on a minimal (no DE) installation of Debian.
