@@ -53,10 +53,6 @@
   apt: name=thunar
   tags: *tags_for_openbox_tasks 
 
-- name: Set Thunar as default XDG inode/directory
-  shell: xdg-mime default org.xfce.Thunar.desktop inode/directory
-  tags: *tags_for_openbox_tasks
-
 - name: Install Pulse-Audio & Tools
   become: true
   apt:
