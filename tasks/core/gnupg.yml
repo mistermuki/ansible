@@ -1,0 +1,32 @@
+- name: Unencrypt GPG private key
+  copy:
+    src: "{{ gpg_private_source }}"
+    dest: "{{ lookup('env', 'HOME')}}/gpg_private.key"
+    mode: 0600
+  tags: &tags_for_gnupg_tasks ['gnupg', 'core', 'desktop']
+
+
+- name: Install GPG private key
+  shell: gpg --import  {{lookup('env', 'HOME')}}/gpg_private.key
+  tags: *tags_for_gnupg_tasks 
+
+- name: Remove unencrypted private key
+  shell: shred --remove {{lookup('env', 'HOME')}}/gpg_private.key
+  tags: *tags_for_gnupg_tasks
+
+- name: Unencrypt GPG public key
+  copy:
+    src: "{{ gpg_public_source }}"
+    dest: "{{ lookup('env', 'HOME')}}/gpg_public.key"
+    mode: 0600
+  tags: *tags_for_gnupg_tasks 
+
+- name: Install GPG private key
+  shell: gpg --import  {{lookup('env', 'HOME')}}/gpg_public.key
+  tags: *tags_for_gnupg_tasks 
+
+- name: Remove unencrypted public key
+  shell: shred --remove {{lookup('env', 'HOME')}}/gpg_public.key
+  tags: *tags_for_gnupg_tasks
+
+

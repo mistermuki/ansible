@@ -2,6 +2,8 @@
   vars:
     source_key: "./ssh/id_rsa"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
+    gpg_private_source: "./gnupg/private_key.asc"
+    gpg_public_source: "./gnupg/public_key.asc"
   pre_tasks:
   - name: Update and upgrade apt packages
     become: true
@@ -15,6 +17,7 @@
   tasks:
     - include: tasks/core/core.yml
     - include: tasks/core/ssh.yml
+    - include: tasks/core/gnupg.yml
     - include: tasks/core/zsh.yml
     - include: tasks/core/dotfiles.yml
     - include: tasks/kiboigo.yml
