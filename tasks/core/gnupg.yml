@@ -29,4 +29,7 @@
   shell: shred --remove {{lookup('env', 'HOME')}}/gpg_public.key
   tags: *tags_for_gnupg_tasks
 
-
+- name: Set GNUPG for Git
+  # Uses the first key present.
+  shell: git config --global user.signingkey $(gpg --list-secret-keys | awk 'NR == 4 {print $1}') && git config --global commit.gpgsign true 
+  tags: *tags_for_gnupg_tasks
