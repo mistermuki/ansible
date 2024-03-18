@@ -13,3 +13,8 @@
   become: true
   apt: name=tmux
   tags: ['core', 'desktop', 'dev'] 
+
+- name: Gnome Keyring 
+  become: true
+  apt: name=gnome-keyring
+  tags: ['core', 'desktop']
