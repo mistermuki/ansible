@@ -43,3 +43,4 @@
     - include: tasks/dev/dotnet.yml
     - include: tasks/dev/docker.yml
     - include: tasks/dev/k3s.yml
+    - include: tasks/dev/hotspot.yml

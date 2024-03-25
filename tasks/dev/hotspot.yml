@@ -1,0 +1,5 @@
+- name: Install Hotspot 
+  become: true
+  apt:
+    name: ['hotspot']
+  tags: &tags_for_hotspot_tasks ['hotspot', 'perf', 'dev']
