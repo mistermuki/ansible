@@ -23,7 +23,7 @@
     - include: tasks/kiboigo.yml
     - include: tasks/dev/neovim.yml
     - include: tasks/desktop/kernel.yml
-    - include: tasks/desktop/openbox.yml
+    - include: tasks/desktop/i3.yml
     - include: tasks/desktop/ly.yml
     - include: tasks/desktop/fonts.yml
     - include: tasks/desktop/flatpak.yml
