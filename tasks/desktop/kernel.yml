@@ -1,22 +1,11 @@
-- name: Add Liquorix Dependencies
-  become: true
-  apt:
-    name: ['gpg', 'ca-certificates', 'apt-transport-https'] 
-  tags: &tags_for_kernel_tasks ['kernel', 'desktop'] 
-
-- name: Add Liquorix Keys
-  become: true
-  shell: curl 'https://liquorix.net/liquorix-keyring.gpg' | gpg --batch --yes --output '/etc/apt/keyrings/liquorix-keyring.gpg' --dearmor
-  tags: *tags_for_kernel_tasks
-
-- name: Add Liquorix Repository 
+- name: Add Bookworm Backports
   become: true
   ansible.builtin.apt_repository:
-    repo: deb [arch=amd64 signed-by=/etc/apt/keyrings/liquorix-keyring.gpg] https://liquorix.net/debian/ bookworm main
+    repo: deb http://deb.debian.org/debian/ bookworm-backports main
     state: present
-  tags: *tags_for_kernel_tasks
+  tags: &tags_for_kernel_tasks ['kernel', 'desktop'] 
 
-- name: Update Liquorix APT 
+- name: Update Bookworm Apt
   become: true
   apt:
     force_apt_get: true
@@ -24,16 +13,10 @@
     state: present
   tags: *tags_for_kernel_tasks
 
-- name: Install Liquorix Kernel
+- name: Install Backport Kernel
   become: true
   apt:
-    name: ['linux-image-liquorix-amd64', 'linux-headers-liquorix-amd64']
+    name: ['linux-image-amd64', 'linux-headers-amd64']
     state: latest
-  tags: *tags_for_kernel_tasks
-
-- name: Clean old Kernel 
-  become: true
-  apt:
-    autoremove: yes
-    purge: yes
+    default_release: bookworm-backports
   tags: *tags_for_kernel_tasks
