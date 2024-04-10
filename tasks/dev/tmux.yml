@@ -1,0 +1,13 @@
+- name: tmux
+  become: true
+  apt: name=tmux
+  tags: &tags_for_tmux_tasks ['tmux', 'desktop', 'dev']
+
+- name: fzf
+  become: true
+  apt: name=fzf
+  tags: *tags_for_tmux_tasks
+
+- name: twm
+  shell: cargo install twm
+  tags: *tags_for_tmux_tasks

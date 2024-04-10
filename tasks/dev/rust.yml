@@ -1,3 +1,3 @@
 - name: Install Rustup
   shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-  tags: &tags_for_rust_tasks ['rust', 'dev']
+  tags: &tags_for_rust_tasks ['rust', 'dev', 'desktop', 'tmux']

@@ -37,6 +37,7 @@
     - include: tasks/apps/freecad.yml
     - include: tasks/apps/kicad.yml
     - include: tasks/dev/rust.yml
+    - include: tasks/dev/tmux.yml
     - include: tasks/dev/virt.yml
     - include: tasks/dev/java.yml
     - include: tasks/dev/node.yml
