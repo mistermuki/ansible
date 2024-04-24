@@ -39,9 +39,9 @@
   apt: name=rofi
   tags: *tags_for_i3_tasks 
 
-- name: Install ksnip
+- name: Install flameshot
   become: true
-  apt: name=ksnip
+  apt: name=flameshot
   tags: *tags_for_i3_tasks 
 
 - name: Install thunar
