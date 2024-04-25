@@ -1,0 +1,10 @@
+- name: Install Alacritty 
+  become: true
+  apt: name=alacritty
+  tags: ['alacritty', 'desktop']
+
+- name: Set Alacritty as default Terminal
+  become: true
+  shell: update-alternatives --set x-terminal-emulator /usr/bin/alacritty
+  tags: ['alacritty', 'desktop']
+

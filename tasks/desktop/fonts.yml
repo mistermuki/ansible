@@ -1,10 +1,10 @@
 - name: Download JetBrainsMono Nerd Font
   shell: curl -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip -o {{ lookup('env', 'HOME') }}/JetBrainsMono.zip
-  tags: ['fonts', 'desktop', 'kitty', 'i3']
+  tags: ['fonts', 'desktop', 'alacritty', 'i3']
 
 - name: Install JetBrainsMono Nerd Font
   shell: unzip -o {{ lookup('env', 'HOME') }}/JetBrainsMono.zip -d {{ lookup('env', 'HOME') }}/.fonts/ && fc-cache && rm {{ lookup('env', 'HOME') }}/JetBrainsMono.zip
-  tags: ['fonts', 'desktop', 'kitty', 'i3']
+  tags: ['fonts', 'desktop', 'alacritty', 'i3']
 
 - name: Download NerdFontsSymbolsOnly
   shell: curl -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/NerdFontsSymbolsOnly.zip -o {{ lookup('env', 'HOME') }}/NerdFontsSymbolsOnly.zip
