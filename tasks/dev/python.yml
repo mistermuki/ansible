@@ -1,0 +1,10 @@
+- name: Install Python 3 
+  become: true
+  apt: name=python3
+  tags: &tags_for_python_tasks ['python', 'dev']
+
+- name: Install Python Virtual Environments
+  become: true
+  apt:
+    name: ['python3-venv', 'python3-virtualenvwrapper']
+  tags: *tags_for_python_tasks
