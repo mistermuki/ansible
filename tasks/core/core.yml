@@ -9,6 +9,11 @@
   apt: name=network-manager
   tags: ['core', 'desktop']
 
+- name: firewalld
+  become: true
+  apt: name=firewalld
+  tags: ['core', 'desktop']
+
 - name: Gnome Keyring 
   become: true
   apt: name=gnome-keyring
