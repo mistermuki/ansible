@@ -8,7 +8,7 @@
   apt: name=nodejs
   tags: *tags_for_node_tasks
 
-- name: Install Yarn
+- name: Install pnpm
   become: true
-  shell: npm install -g yarn
+  shell: npm install -g pnpm
   tags: *tags_for_node_tasks
